@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html><html>
+    <head>
+        <title>index</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="generator" content="Wakanda GUIDesigner"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+        <meta name="WAF.catalog" content=""/>
+        <meta name="WAF.packageJson"/>
+    	<meta name="wakanda-version" content="6 build 6.147688"/>
+		<meta name="wakanda-build" content="6.147688"/>
+		<meta id="waf-interface-css" name="WAF.config.loadCSS" content="styles/index.css"/>
+		<meta id="waf-project-css" name="WAF.config.loadCSS" content="/application.css"/>
+</head>
+    <body id="waf-body" data-type="document" data-lib="WAF" data-entire-model="false" data-platform="desktop" data-viewport-width="device-width" data-viewport-initial-scale="1.0" data-viewport-maximum-scale="1.0" data-viewport-minimum-scale="1.0" data-apple-meta-tags-status-bar="default" data-workspace-orientation="portrait" data-workspace-width="0" data-workspace-height="0" data-group="[]" data-theme="default" style="bottom:;right:;visibility:hidden;">
+        <script type="text/javascript">
+/* 
+Just testing out some programming skills
+Makeing a program that converts celcius to fahrenheit
+very simplistic
+*/
+var temp = 99;
+// tempF() function to convert temperature from C to F
+var tempF = function (temp) { 
+	var temp = prompt("Please enter your temperature in Celsius:");
+	return (temp * 1.8) + 32;
+};
+// tempC() function to convert temperature from F to C
+var tempC = function (temp) { // note we can use "temp" here again, as any variable stays local within a function!
+	var temp = prompt("Please enter your temperature in Fahrenheit:");
+	return (temp - 32) / 1.8;
+};
+// display instructions
+console.log("This tiny js converts C to F, and vice versa");
+//prompt for C / F conversion
+var choice = prompt("If you wish to convert from Celcius to Fahrenheit, type f. If you wish to covert Fahrenheith to Celcius, type c");
+// If statement to run correct function
+if (choice === "f") {
+	console.log("The temperature in Fahrenheit is: " + tempF(temp));
+} else {
+	console.log("The temperature in Celcius is: " + tempC(temp));
+}
+        </script>
+</body>
+</html>
