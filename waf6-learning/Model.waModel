@@ -45,10 +45,12 @@
 			<onGet from="guidedModel.Person.fullName.onGet"/>
 			<onSet from="guidedModel.Person.fullName.onSet"/>
 			<onQuery from="guidedModel.Person.fullName.onQuery"/>
+			<onSort from="guidedModel.Person.fullName.onSort"/>
 		</attributes>
 		<attributes name="address" kind="calculated" scope="public" type="string" scriptKind="javascript">
 			<onGet from="guidedModel.Person.address.onGet"/>
 			<onSet from="guidedModel.Person.address.onSet"/>
+			<onSort from="guidedModel.Person.address.onSort"/>
 		</attributes>
 	</dataClasses>
 	<dataClasses name="Task" className="Task" collectionName="Tasks" scope="public">

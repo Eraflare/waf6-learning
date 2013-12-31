@@ -5,6 +5,13 @@ guidedModel =// @startlock
 	{
 		address :
 		{
+			onSort:function(ascending)
+			{// @endlock
+				if (ascending)
+					return 'streetName, streetNumber';
+				else
+					return 'streetName desc, streetName desc';
+			},// @startlock
 			onSet:function(value)
 			{// @endlock
 				// Add your code here
@@ -41,6 +48,13 @@ guidedModel =// @startlock
 		},
 		fullName :
 		{
+			onSort:function(ascending)
+			{// @endlock
+				if (ascending)
+					return 'lastName, firstName';
+				else
+					return 'lastName desc, firstName desc';
+			},// @startlock
 			onQuery:function(compOperator, valueToCompare)
 			{// @endlock
 				// Add your code here
