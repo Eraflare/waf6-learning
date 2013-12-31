@@ -1,1 +1,63 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><EntityModelCatalog><extraProperties ____objectunic="true" version="1"><classes ____objectunic="true"><Person ____objectunic="true" panelColor="#4FA997"><panel ____objectunic="true" isOpen="true" pathVisible="true"><position ____objectunic="true" X="56" Y="55"/></panel></Person><Task ____objectunic="true" panelColor="#996699"><panel ____objectunic="true" isOpen="true" pathVisible="true"><position ____objectunic="true" X="340" Y="40"/></panel></Task><Company ____objectunic="true" panelColor="#E5B9B7"><panel ____objectunic="true" isOpen="true" pathVisible="true"><position ____objectunic="true" X="337" Y="258"/></panel></Company></classes><model ____objectunic="true" workspaceLeft="0" workspaceTop="0"/></extraProperties><dataClasses name="Company" className="Company" collectionName="Companies" scope="public"><attributes name="ID" kind="storage" scope="public" indexed="true" unique="true" autosequence="true" type="long" indexKind="btree"/><attributes name="name" kind="storage" scope="public" unique="true" not_null="true" type="string"/><attributes name="numberOfEmployees" kind="storage" scope="public" type="long"/><attributes name="annualRevenue" kind="storage" scope="public" type="number"/><attributes name="creationDate" kind="storage" scope="public" type="date" simpleDate="false"><defaultFormat format="mm/dd/yy" presentation="text"/></attributes><attributes name="status" kind="storage" scope="public" limiting_length="5" type="string" fixedLength="5"/><attributes name="comments" kind="storage" scope="public" type="string" pattern="^[A-Za-z0-9]*$"/><attributes name="externalID" kind="storage" scope="public" autogenerate="true" type="uuid"/><key name="ID"/></dataClasses><dataClasses name="Person" className="Person" collectionName="People" scope="public"><attributes name="ID" kind="storage" scope="public" indexed="true" unique="true" autosequence="true" type="long" indexKind="btree"/><attributes name="firstName" kind="storage" scope="public" not_null="true" type="string"/><attributes name="lastName" kind="storage" scope="public" not_null="true" type="string"/><attributes name="streetNumber" kind="storage" scope="public" not_null="true" type="number"/><attributes name="streetName" kind="storage" scope="public" not_null="true" type="string"/><attributes name="city" kind="storage" scope="public" type="string"/><attributes name="state" kind="storage" scope="public" type="string"/><attributes name="zip" kind="storage" scope="public" type="string"/><attributes name="homePhone" kind="storage" scope="public" type="string"/><attributes name="fullName" kind="calculated" scope="public" type="string" scriptKind="javascript"><onGet from="guidedModel.Person.fullName.onGet"/><onSet from="guidedModel.Person.fullName.onSet"/></attributes><attributes name="address" kind="calculated" scope="public" type="string" scriptKind="javascript"><onGet from="guidedModel.Person.address.onGet"/></attributes><key name="ID"/></dataClasses><dataClasses name="Task" className="Task" collectionName="Tasks" scope="public"><attributes name="ID" kind="storage" scope="public" indexed="true" unique="true" autosequence="true" type="long" indexKind="btree"/><attributes name="description" kind="storage" scope="public" type="string"/><attributes name="taskDate" kind="storage" scope="public" type="date" simpleDate="false"><defaultFormat format="dd/mm/yy" presentation="text"/></attributes><attributes name="taskType" kind="storage" scope="public" type="string"/><attributes name="taskStatus" kind="storage" scope="public" type="string"/><key name="ID"/></dataClasses></EntityModelCatalog>
+﻿<?xml version="1.0" encoding="UTF-8"?><EntityModelCatalog>
+	<extraProperties ____objectunic="true" version="1">
+		<classes ____objectunic="true">
+			<Person ____objectunic="true" panelColor="#4FA997">
+				<panel ____objectunic="true" isOpen="true" pathVisible="true">
+					<position ____objectunic="true" X="56" Y="55"/>
+				</panel>
+			</Person>
+			<Task ____objectunic="true" panelColor="#996699">
+				<panel ____objectunic="true" isOpen="true" pathVisible="true">
+					<position ____objectunic="true" X="340" Y="40"/>
+				</panel>
+			</Task>
+			<Company ____objectunic="true" panelColor="#E5B9B7">
+				<panel ____objectunic="true" isOpen="true" pathVisible="true">
+					<position ____objectunic="true" X="337" Y="258"/>
+				</panel>
+			</Company>
+		</classes>
+		<model ____objectunic="true" workspaceLeft="0" workspaceTop="0"/>
+	</extraProperties>
+	<dataClasses name="Company" className="Company" collectionName="Companies" scope="public">
+		<attributes name="ID" kind="storage" scope="public" unique="true" autosequence="true" type="long" indexKind="btree" primKey="true"/>
+		<attributes name="name" kind="storage" scope="public" unique="true" not_null="true" type="string"/>
+		<attributes name="numberOfEmployees" kind="storage" scope="public" type="long"/>
+		<attributes name="annualRevenue" kind="storage" scope="public" type="number"/>
+		<attributes name="creationDate" kind="storage" scope="public" type="date" simpleDate="false">
+			<defaultFormat format="mm/dd/yy" presentation="text"/>
+		</attributes>
+		<attributes name="status" kind="storage" scope="public" limiting_length="5" type="string" fixedLength="5"/>
+		<attributes name="comments" kind="storage" scope="public" type="string" pattern="^[A-Za-z0-9]*$"/>
+		<attributes name="externalID" kind="storage" scope="public" autogenerate="true" type="uuid"/>
+	</dataClasses>
+	<dataClasses name="Person" className="Person" collectionName="People" scope="public">
+		<attributes name="ID" kind="storage" scope="public" unique="true" autosequence="true" type="long" indexKind="btree" primKey="true"/>
+		<attributes name="firstName" kind="storage" scope="public" not_null="true" type="string"/>
+		<attributes name="lastName" kind="storage" scope="public" not_null="true" type="string"/>
+		<attributes name="streetNumber" kind="storage" scope="public" not_null="true" type="number"/>
+		<attributes name="streetName" kind="storage" scope="public" not_null="true" type="string"/>
+		<attributes name="city" kind="storage" scope="public" type="string"/>
+		<attributes name="state" kind="storage" scope="public" type="string"/>
+		<attributes name="zip" kind="storage" scope="public" type="string"/>
+		<attributes name="homePhone" kind="storage" scope="public" type="string"/>
+		<attributes name="fullName" kind="calculated" scope="public" type="string" scriptKind="javascript">
+			<onGet from="guidedModel.Person.fullName.onGet"/>
+			<onSet from="guidedModel.Person.fullName.onSet"/>
+			<onQuery from="guidedModel.Person.fullName.onQuery"/>
+		</attributes>
+		<attributes name="address" kind="calculated" scope="public" type="string" scriptKind="javascript">
+			<onGet from="guidedModel.Person.address.onGet"/>
+			<onSet from="guidedModel.Person.address.onSet"/>
+		</attributes>
+	</dataClasses>
+	<dataClasses name="Task" className="Task" collectionName="Tasks" scope="public">
+		<attributes name="ID" kind="storage" scope="public" unique="true" autosequence="true" type="long" indexKind="btree" primKey="true"/>
+		<attributes name="description" kind="storage" scope="public" type="string"/>
+		<attributes name="taskDate" kind="storage" scope="public" type="date" simpleDate="false">
+			<defaultFormat format="dd/mm/yy" presentation="text"/>
+		</attributes>
+		<attributes name="taskType" kind="storage" scope="public" type="string"/>
+		<attributes name="taskStatus" kind="storage" scope="public" type="string"/>
+	</dataClasses>
+</EntityModelCatalog>
